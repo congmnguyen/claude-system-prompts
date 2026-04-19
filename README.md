@@ -2,61 +2,80 @@
 
 [![Sync Anthropic system prompts](https://github.com/congmnguyen/claude-system-prompts/actions/workflows/sync.yml/badge.svg)](https://github.com/congmnguyen/claude-system-prompts/actions/workflows/sync.yml)
 
-A searchable GitHub mirror of the public Anthropic Claude system prompts page.
+Anthropic Claude system prompts for Opus, Sonnet, and Haiku, organized by model with Git history and easy diffs.
 
-This repository tracks Anthropic Claude system prompts for Claude Opus, Claude Sonnet, and Claude Haiku,
-split into one Markdown file per model so the prompts are easier to browse, diff, search, and link.
+This repo turns Anthropic's public system prompts page into a GitHub-friendly tracker:
+- one Markdown file per Claude model
+- Git history for prompt changes over time
+- easy file-level diffs, blame, forks, bookmarks, and sharing
 
-## Why This Repo Exists
+## Why Star This Repo?
 
-- The Anthropic page is public, but a GitHub repo is easier to star, search, diff, fork, and reference.
-- Each model has its own file at the repository root, which makes direct linking and history tracking simpler.
-- A scheduled GitHub Action can refresh the repo automatically when Anthropic updates the source page.
+- You want Anthropic Claude system prompts in a format that is easier to search and diff than the docs page.
+- You want one stable link per model, such as `claude-opus-4-7.md` or `claude-sonnet-4-6.md`.
+- You want to track prompt changes over time with normal GitHub tools instead of manually checking the docs UI.
+- You want a lightweight index for Claude Opus, Claude Sonnet, and Claude Haiku system prompts in one place.
 
-## Included Claude Models
+## Claude Models
 
-- [Claude Opus 4.7](claude-opus-4-7.md) - latest published section: April 16, 2026
-- [Claude Sonnet 4.6](claude-sonnet-4-6.md) - latest published section: February 17, 2026
-- [Claude Opus 4.6](claude-opus-4-6.md) - latest published section: February 5, 2026
-- [Claude Opus 4.5](claude-opus-4-5.md) - latest published section: January 18, 2026
-- [Claude Haiku 4.5](claude-haiku-4-5.md) - latest published section: January 18, 2026
-- [Claude Sonnet 4.5](claude-sonnet-4-5.md) - latest published section: January 18, 2026
-- [Claude Opus 4.1](claude-opus-4-1.md) - latest published section: August 5, 2025
-- [Claude Opus 4](claude-opus-4.md) - latest published section: August 5, 2025
-- [Claude Sonnet 4](claude-sonnet-4.md) - latest published section: August 5, 2025
-- [Claude Sonnet 3.7](claude-sonnet-3-7.md) - latest published section: Feb 24th, 2025
-- [Claude Sonnet 3.5](claude-sonnet-3-5.md) - latest published section: Nov 22nd, 2024
-- [Claude Haiku 3.5](claude-haiku-3-5.md) - latest published section: Oct 22, 2024
-- [Claude Opus 3](claude-opus-3.md) - latest published section: July 12th, 2024
-- [Claude Haiku 3](claude-haiku-3.md) - latest published section: July 12th, 2024
+| Model | Latest section | File |
+| --- | --- | --- |
+| Claude Opus 4.7 | April 16, 2026 | [claude-opus-4-7.md](claude-opus-4-7.md) |
+| Claude Sonnet 4.6 | February 17, 2026 | [claude-sonnet-4-6.md](claude-sonnet-4-6.md) |
+| Claude Opus 4.6 | February 5, 2026 | [claude-opus-4-6.md](claude-opus-4-6.md) |
+| Claude Opus 4.5 | January 18, 2026 | [claude-opus-4-5.md](claude-opus-4-5.md) |
+| Claude Haiku 4.5 | January 18, 2026 | [claude-haiku-4-5.md](claude-haiku-4-5.md) |
+| Claude Sonnet 4.5 | January 18, 2026 | [claude-sonnet-4-5.md](claude-sonnet-4-5.md) |
+| Claude Opus 4.1 | August 5, 2025 | [claude-opus-4-1.md](claude-opus-4-1.md) |
+| Claude Opus 4 | August 5, 2025 | [claude-opus-4.md](claude-opus-4.md) |
+| Claude Sonnet 4 | August 5, 2025 | [claude-sonnet-4.md](claude-sonnet-4.md) |
+| Claude Sonnet 3.7 | Feb 24th, 2025 | [claude-sonnet-3-7.md](claude-sonnet-3-7.md) |
+| Claude Sonnet 3.5 | Nov 22nd, 2024 | [claude-sonnet-3-5.md](claude-sonnet-3-5.md) |
+| Claude Haiku 3.5 | Oct 22, 2024 | [claude-haiku-3-5.md](claude-haiku-3-5.md) |
+| Claude Opus 3 | July 12th, 2024 | [claude-opus-3.md](claude-opus-3.md) |
+| Claude Haiku 3 | July 12th, 2024 | [claude-haiku-3.md](claude-haiku-3.md) |
 
-## Auto Sync
+## What This Repo Adds
 
-- Workflow file: `.github/workflows/sync.yml`
-- Triggers: scheduled run plus manual `workflow_dispatch`
-- Update command used by CI: `python3 scripts/import_system_prompts.py --remote`
-- The workflow only commits when the imported output passes validation and contains no unresolved payload references.
+- Root-level model files instead of one long docs page
+- Git commits you can watch or subscribe to
+- a simple [CHANGELOG.md](CHANGELOG.md) for major imported snapshots
+- an import script for rebuilding the repo from a local export or a best-effort live fetch
 
-## Manual Update
+## How To Diff Prompt Updates
 
-Recommended if you already have an exported copy of the Anthropic page:
+On GitHub:
+- open any model file and use file history
+- compare commits to see exactly what changed in a prompt
+- watch the repo to get notified when new snapshots land
+
+Locally:
+
+```bash
+git log -- claude-opus-4-7.md
+git diff HEAD~1 HEAD -- claude-opus-4-7.md
+```
+
+## Update Workflow
+
+Recommended, stable path if you already exported the Anthropic page:
 
 ```bash
 python3 scripts/import_system_prompts.py --source-file /path/to/System\ Prompts.md
 ```
 
-You can also try a live fetch from Anthropic:
+Best-effort live fetch from Anthropic:
 
 ```bash
 python3 scripts/import_system_prompts.py --remote
 ```
 
-The live fetch path is best-effort and only writes changes when the imported output passes validation.
+The scheduled GitHub Action only commits when the imported output passes validation.
 
 ## Notes
 
-- Content in this repo is sourced from Anthropic's official public documentation.
-- Anthropic may change the docs structure over time; if that happens, the import script may need adjustment.
-- This repository is an unofficial mirror and index, not the canonical source.
+- This repository is an unofficial GitHub mirror and tracker of Anthropic's public documentation.
+- Anthropic may change the docs structure over time, which can require importer updates.
+- If you care about prompt diffs, prompt tracking, or Claude system prompt history, watching this repo is more useful than using it once.
 
-Keywords: Anthropic Claude system prompts, Claude Opus system prompt, Claude Sonnet system prompt, Claude Haiku system prompt.
+Keywords: Anthropic Claude system prompts, Claude Opus system prompt, Claude Sonnet system prompt, Claude Haiku system prompt, Claude prompt diffs, Claude prompt history.
