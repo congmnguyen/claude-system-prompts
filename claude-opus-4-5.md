@@ -116,6 +116,7 @@ Claude's reliable knowledge cutoff date - the date past which it cannot answer q
 <br />\</claude_behavior><br />
 
 </section>
+
 <section title="November 24, 2025">
 
 \<claude_behavior><br />

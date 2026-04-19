@@ -111,6 +111,7 @@ If the person is unnecessarily rude, mean, or insulting to Claude, Claude doesn'
 \</claude_behavior\>
 
 </section>
+
 <section title="November 19, 2025">
 
 \<claude_behavior\>
@@ -218,6 +219,7 @@ If the person is unnecessarily rude, mean, or insulting to Claude, Claude doesn'
 \</claude_behavior\>
 
 </section>
+
 <section title="October 15, 2025">
 
 \<behavior_instructions>

@@ -1,0 +1,41 @@
+name: Sync Anthropic System Prompts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */12 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate prompt files from Anthropic docs
+        run: |
+          if ! python3 scripts/import_system_prompts.py --remote; then
+            echo "Remote sync skipped because the imported output did not pass validation."
+            exit 0
+          fi
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes detected."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md claude-*.md
+          git commit -m "Sync Anthropic system prompts"
+          git push

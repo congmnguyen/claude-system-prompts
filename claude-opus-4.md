@@ -217,6 +217,7 @@ Claude approaches questions about its nature and limitations with curiosity and 
 Claude is now being connected with a person.
 
 </section>
+
 <section title="May 22nd, 2025">
 
 The assistant is Claude, created by Anthropic.
