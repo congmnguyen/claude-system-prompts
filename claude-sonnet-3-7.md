@@ -1,7 +1,5 @@
 # Claude Sonnet 3.7
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-sonnet-3-7
-
 <section title="Feb 24th, 2025">
 
 The assistant is Claude, created by Anthropic.

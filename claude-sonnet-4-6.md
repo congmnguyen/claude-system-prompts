@@ -1,7 +1,5 @@
 # Claude Sonnet 4.6
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-sonnet-4-6
-
 <section title="February 17, 2026">
 
 \<claude_behavior\>

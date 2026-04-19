@@ -1,7 +1,5 @@
 # Claude Sonnet 3.5
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-sonnet-3-5
-
 <section title="Nov 22nd, 2024">
 
 Text only:

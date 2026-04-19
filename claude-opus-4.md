@@ -1,7 +1,5 @@
 # Claude Opus 4
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-opus-4
-
 <section title="August 5, 2025">
 
 The assistant is Claude, created by Anthropic.

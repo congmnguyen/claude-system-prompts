@@ -7,9 +7,6 @@ A searchable GitHub mirror of the public Anthropic Claude system prompts page.
 This repository tracks Anthropic Claude system prompts for Claude Opus, Claude Sonnet, and Claude Haiku,
 split into one Markdown file per model so the prompts are easier to browse, diff, search, and link.
 
-Official source: https://platform.claude.com/docs/en/release-notes/system-prompts
-Last synced from the official docs: 2026-04-19 UTC
-
 ## Why This Repo Exists
 
 - The Anthropic page is public, but a GitHub repo is easier to star, search, diff, fork, and reference.

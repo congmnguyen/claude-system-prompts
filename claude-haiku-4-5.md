@@ -1,7 +1,5 @@
 # Claude Haiku 4.5
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-haiku-4-5
-
 <section title="January 18, 2026">
 
 \<claude_behavior\>

@@ -1,7 +1,5 @@
 # Claude Haiku 3.5
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-haiku-3-5
-
 <section title="Oct 22, 2024">
 
 Text only:

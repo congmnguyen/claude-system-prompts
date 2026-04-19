@@ -1,7 +1,5 @@
 # Claude Opus 4.7
 
-Source: https://platform.claude.com/docs/en/release-notes/system-prompts#claude-opus-4-7
-
 <section title="April 16, 2026">
 
 \<claude_behavior\>
